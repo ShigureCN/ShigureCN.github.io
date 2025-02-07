@@ -1,0 +1,308 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>REDMI Note 10 Pro (chopin)刷入CrDroid类原生(含gapps)教程 | Shigure's Blog</title><meta name="author" content="時雨空"><meta name="copyright" content="時雨空"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="前言：教程酷安有，但是没有如何教你刷入Gapps的，所以在这里进行一下整合，也算是记录一下刷机经历吧  观前提示： 数据无价，请备份好数据再进行刷机数据无价，请备份好数据再进行刷机数据无价，请备份好数据再进行刷机起因高考结束后换了个手机，旧手机是redmi神机之note 10 pro，这手机好歹也算是我高中时的珍贵回忆了，摆在那里吃灰也不是什么太好，刷个机玩玩也不错捏。于是我暑假开刷，结果没注意">
+<meta property="og:type" content="article">
+<meta property="og:title" content="REDMI Note 10 Pro (chopin)刷入CrDroid类原生(含gapps)教程">
+<meta property="og:url" content="http://example.com/2025/02/07/REDMI-Note-10-Pro-chopin-%E5%88%B7%E5%85%A5CrDroid%E7%B1%BB%E5%8E%9F%E7%94%9F-%E5%90%ABgapps-%E6%95%99%E7%A8%8B/index.html">
+<meta property="og:site_name" content="Shigure&#39;s Blog">
+<meta property="og:description" content="前言：教程酷安有，但是没有如何教你刷入Gapps的，所以在这里进行一下整合，也算是记录一下刷机经历吧  观前提示： 数据无价，请备份好数据再进行刷机数据无价，请备份好数据再进行刷机数据无价，请备份好数据再进行刷机起因高考结束后换了个手机，旧手机是redmi神机之note 10 pro，这手机好歹也算是我高中时的珍贵回忆了，摆在那里吃灰也不是什么太好，刷个机玩玩也不错捏。于是我暑假开刷，结果没注意">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/image/avatar.png">
+<meta property="article:published_time" content="2025-02-07T06:45:21.000Z">
+<meta property="article:modified_time" content="2025-02-07T06:50:22.467Z">
+<meta property="article:author" content="時雨空">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/image/avatar.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2025/02/07/REDMI-Note-10-Pro-chopin-%E5%88%B7%E5%85%A5CrDroid%E7%B1%BB%E5%8E%9F%E7%94%9F-%E5%90%ABgapps-%E6%95%99%E7%A8%8B/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'REDMI Note 10 Pro (chopin)刷入CrDroid类原生(含gapps)教程',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  isShuoshuo: false
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/image/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">11</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/image/background.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><img class="site-icon" src="/image/favicon.png" alt="Logo"><span class="site-name">Shigure's Blog</span></a><a class="nav-page-title" href="/"><span class="site-name">REDMI Note 10 Pro (chopin)刷入CrDroid类原生(含gapps)教程</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">REDMI Note 10 Pro (chopin)刷入CrDroid类原生(含gapps)教程</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-02-07T06:45:21.000Z" title="发表于 2025-02-07 14:45:21">2025-02-07</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-02-07T06:50:22.467Z" title="更新于 2025-02-07 14:50:22">2025-02-07</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Android/">Android</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><blockquote>
+<p>前言：<br>教程酷安有，但是没有如何教你刷入Gapps的，所以在这里进行一下整合，也算是记录一下刷机经历吧</p>
+</blockquote>
+<p>观前提示：</p>
+<h1 id="数据无价，请备份好数据再进行刷机"><a href="#数据无价，请备份好数据再进行刷机" class="headerlink" title="数据无价，请备份好数据再进行刷机"></a>数据无价，请备份好数据再进行刷机</h1><h1 id="数据无价，请备份好数据再进行刷机-1"><a href="#数据无价，请备份好数据再进行刷机-1" class="headerlink" title="数据无价，请备份好数据再进行刷机"></a>数据无价，请备份好数据再进行刷机</h1><h1 id="数据无价，请备份好数据再进行刷机-2"><a href="#数据无价，请备份好数据再进行刷机-2" class="headerlink" title="数据无价，请备份好数据再进行刷机"></a>数据无价，请备份好数据再进行刷机</h1><h1 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h1><p>高考结束后换了个手机，旧手机是redmi神机之note 10 pro，这手机好歹也算是我高中时的珍贵回忆了，摆在那里吃灰也不是什么太好，刷个机玩玩也不错捏。于是我暑假开刷，结果没注意底包要求，twrp总是没法成功挂载上硬盘，于是作罢。</p>
+<p>新手机特地选的是能随意解开bootloader的oneplus 12，但是当我正准备解开的时候才知道，原来一加解锁bootloader会掉tee啊！！<del>不掉tee的好像只有小米（</del><br>这时想起来我还有台备用机，于是寒假，启动！开刷！<br>看酷安对这个机子的类原生包挺少的，又没有一个详细的刷入gapps教程，于是我就随便写写了，如果也有刷入gapps需要的可直接跳转到3.4</p>
+<h1 id="1-解锁boot-loader"><a href="#1-解锁boot-loader" class="headerlink" title="1. 解锁boot loader"></a>1. 解锁boot loader</h1><p><em>解锁前记得退出Google账号</em></p>
+<p><del>MIUI解锁，爽！</del><br>先连续点击版本号，打开开发者模式，进入”设备解锁状态”，选定绑定账号和设备。然后<del>关掉这个博客，</del>等待7天吧。（当然也可以选择mtk强解bl工具）<br><img src="https://miuiver.com/wp-content/uploads/2020/12/how-to-unlock-xiaomi-phone-2.png" alt="解锁"></p>
+<blockquote>
+<p>图源miuiver.com</p>
+</blockquote>
+<p>好的假设你已经等待了7天了，那么我们现在准备一台电脑，下载这个经典的<a target="_blank" rel="noopener" href="https://www.miui.com/unlock/index.html">小米bootloader解锁工具</a> ，点击解锁工具下载即可</p>
+<p><em>记得退出小米账号</em></p>
+<p>解压压缩包，双击里面的exe文件（没错只有Windows版本），将你的手机长按电源键，选择重启设备，在重启的时候一直按住音量下键即可进入fast boot模式</p>
+<p><em>注意此步会清除所有数据！！</em></p>
+<p>手机有线链接电脑，bl解锁工具会识别到手机<br><img src="https://miuiver.com/wp-content/uploads/2020/12/xiaomi-bl-unlock.png" alt=""><br><img src="https://miuiver.com/wp-content/uploads/2020/12/bl-unlock-results.png" alt=""></p>
+<blockquote>
+<p>图源miuiver.com</p>
+</blockquote>
+<p>解锁成功！</p>
+<h1 id="2-通过miflash刷入底包"><a href="#2-通过miflash刷入底包" class="headerlink" title="2.通过miflash刷入底包"></a>2.通过miflash刷入底包</h1><p><a target="_blank" rel="noopener" href="https://cdn.alsgp0.fds.api.mi-img.com/micomm/MiFlash2020-3-14-0.rar">miflash下载</a><br>下载完之后解压rar文件，双击XiaoMiFlash.exe，首次启动会请求下载驱动，正常下载即可。<br><a target="_blank" rel="noopener" href="https://xiaomirom.com/download/redmi-note-10-pro-5g-poco-x3-gt-chopin-stable-V13.0.7.0.SKPCNXM/#china-fastboot">chopin_images_V13.0.7.0底包下载</a><br>选择fast boot线刷包下载解压即可<br><img src="https://raw.githubusercontent.com/ShigureCN/ImageStorage/main/%7E/Blogreal-images.png" alt=""><br>记得将名字改短一点，不然刷入的时候会出现奇奇怪怪的bug。<br>手机重启+音量下，进入fastboot，插入电脑，此时电脑打开miflash，点击加载设备，此时你的电脑应该识别到了手机，并且出现了你的设备，点击顶上的“选择”，选到这个目录下（点击灰色的那个文件夹即可）<br><img src="https://raw.githubusercontent.com/ShigureCN/ImageStorage/main/%7E/Blogpreflash.png" alt=""></p>
+<p><em>注意不要手快就开始刷了！！</em></p>
+<p><img src="https://raw.githubusercontent.com/ShigureCN/ImageStorage/main/%7E/Blogflashwaring.png" alt=""><br><strong>选中全部删除而不是全部删除并LOCK，这个很重要</strong></p>
+<p>然后点击右上角刷机即可<br>刷完之后会出现红色报错，那个不要紧，能正常进入系统即可，刷机总耗时约400s，如果时间久了不要着急</p>
+<h1 id="3-刷入类原生！！"><a href="#3-刷入类原生！！" class="headerlink" title="3. 刷入类原生！！"></a>3. 刷入类原生！！</h1><p>终于我们走到了这一步。我们的刷入方案是</p>
+<ol>
+<li>刷入crd的类原生recovery</li>
+<li>通过recovery刷入rec系统</li>
+<li>通过fastboot刷入magisk(可选)</li>
+<li>通过recovery刷入gapps (可选)</li>
+</ol>
+<h2 id="3-1-刷入recovery"><a href="#3-1-刷入recovery" class="headerlink" title="3.1 刷入recovery"></a>3.1 刷入recovery</h2><p>首先我们进入fastboot模式，打开Android platform tools<br>此工具可以在酷安的这位佬<a target="_blank" rel="noopener" href="http://www.coolapk.com/u/2081207">@锦里哩</a>找到，也可在文末的度盘链接获取，你也可以在Android developer的官方获得<a target="_blank" rel="noopener" href="https://developer.android.com/tools/releases/platform-tools?hl=zh-cn">platform tools</a><br><img src="https://raw.githubusercontent.com/ShigureCN/ImageStorage/main/%7E/Blogplatformtools.png" alt=""></p>
+<p>在文件内部打开powershell<br><img src="https://raw.githubusercontent.com/ShigureCN/ImageStorage/main/%7E/BlogopenPS.png" alt=""></p>
+<p>因为powershell的语法和cmd不同，于是我们在powershell中打开cmd<br><img src="https://raw.githubusercontent.com/ShigureCN/ImageStorage/main/%7E/Blogcmd.png" alt=""></p>
+<p>我们可以输入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fastboot devices</span><br></pre></td></tr></table></figure><br>此时，如果你的手机是处于fastboot模式并且有线链接电脑，cmd窗口应该会列出你的设备，如果没有，请检查你的操作。<br>我们将我们要刷入的文件放到platform tools目录下（就是我选中的这几个）<br><img src="https://raw.githubusercontent.com/ShigureCN/ImageStorage/main/%7E/Blogflashfile.png" alt=""></p>
+<p>我们输入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fastboot flash boot_ab crDroid+chopin-v8.13-rec.img</span><br></pre></td></tr></table></figure><br>很快便刷入recovery成功</p>
+<h2 id="3-2-刷入系统"><a href="#3-2-刷入系统" class="headerlink" title="3.2 刷入系统"></a>3.2 刷入系统</h2><p>随后我们输入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fastboot set_active b</span><br></pre></td></tr></table></figure><br>进入b槽（题外话，如果对ab vab这类感兴趣的话可以去b站看看FlashCorpa的视频）<br>我们通过命令重启进入rec<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fastboot reboot recovery</span><br></pre></td></tr></table></figure><br>此时我们便成功进入到了rec。<br>我们先进行双清，你会发现在rec中你无法直接触控屏幕，此时你可以通过音量加减操作光标，电源键确认。<br>我们依次进入到 Factory reset ，format data/factory reset，format data确认即可。<br>我们返回到最开始的地方（按音量加可以碰到顶上的返回键），选择apply update，apply from adb即可，此时你的电脑应该“噔噔”了两下。<br>我们在cmd窗口输入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb devices</span><br></pre></td></tr></table></figure><br>应该会显示你的设备信息<br>输入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb sideload crDroidAndroid-12.1-20230120-chopin-v8.13.zip</span><br></pre></td></tr></table></figure><br>敲回车即开始刷入，等待刷入成功</p>
+<p>如果不需要刷入magisk，和gapps，可直接输入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fastboot set_active a</span><br></pre></td></tr></table></figure><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fastboot reboot</span><br></pre></td></tr></table></figure><br>重启享受类原生</p>
+<p>如果不需要刷入magisk，但是需要gapps，跳转到3.4即可</p>
+<h2 id="3-3-刷入magisk（可选）"><a href="#3-3-刷入magisk（可选）" class="headerlink" title="3.3 刷入magisk（可选）"></a>3.3 刷入magisk（可选）</h2><p>这里我直接使用的这位酷安<a target="_blank" rel="noopener" href="http://www.coolapk.com/u/2081207">@锦里哩</a>佬提供的magisk boot文件，网盘压缩包里也提供了crd的源boot文件，也可等开机后自行进行修补<br>成功后，重启进入fastboot<br>切入a槽<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fastboot set_active a</span><br></pre></td></tr></table></figure><br>刷入magisk<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fastboot flash boot magisk26.3.img</span><br></pre></td></tr></table></figure><br>刷入成功即可</p>
+<p>如果不需要gapps可以直接输入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fastboot reboot</span><br></pre></td></tr></table></figure><br>重启享受类原生</p>
+<p>如果需要gapps请输入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fastboot reboot recovery</span><br></pre></td></tr></table></figure><br>回到rec</p>
+<h2 id="3-4-刷入gapps（可选）"><a href="#3-4-刷入gapps（可选）" class="headerlink" title="3.4 刷入gapps（可选）"></a>3.4 刷入gapps（可选）</h2><p>此时你应该在recovery<br>我们返回到recovery最开始的地方（按音量加可以碰到顶上的返回键），选择apply update，apply from adb即可，此时你的电脑应该“噔噔”了两下。<br>我们在cmd窗口输入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb devices</span><br></pre></td></tr></table></figure><br>应该会显示你的设备信息</p>
+<p>现在开始刷入gapps，我们选择的是bitgapps的core包（我试着刷入过nikgapps的full包和basic包，但是刷入失败，显示存储空间不足，并且卸载也没能卸载干净导致无法进入桌面，各位如果有需要的话也可以试试bitgapps的其他包）</p>
+<p>如果你是用的我的压缩包的话输入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb -d sideload core.zip</span><br></pre></td></tr></table></figure></p>
+<p>如果你用的是那位佬<a target="_blank" rel="noopener" href="http://www.coolapk.com/u/2081207">@锦里哩</a>的网盘的话需要自行去官网下载，<a target="_blank" rel="noopener" href="https://bitgapps.io/">官网</a>注意我们是andriod12.1的arm64版本，不要下载错了。<br>我们现在重启回主系统就可以享受类原生啦</p>
+<h1 id="4-magisk简单美化下系统"><a href="#4-magisk简单美化下系统" class="headerlink" title="4. magisk简单美化下系统"></a>4. magisk简单美化下系统</h1><p>我是很喜欢类原生的风格的，所以我只替换了系统桌面<br>我们先去github下载你刷入的对应版本的magisk，我是26.3版本的，正常安装即可，如果有需要可以使用网盘的boot.img顺手给magisk升下级。<br>使用酷安<a target="_blank" rel="noopener" href="http://www.coolapk.com/u/2081207">@锦里哩</a>佬给的网盘，下载lawnchair的模块，刷入magisk模块内，一路音量下重启即可。<br>如果你有需要可以去试试iconify</p>
+<h1 id="5-解决网络！问题"><a href="#5-解决网络！问题" class="headerlink" title="5.解决网络！问题"></a>5.解决网络！问题</h1><p>可以从appshare 下载个captivemgr解决<br>划到底下选择备选服务器的MIUI，点击倒数第二个框框的应用即可</p>
+<h1 id="成果"><a href="#成果" class="headerlink" title="成果"></a>成果</h1><p><img src="https://raw.githubusercontent.com/ShigureCN/ImageStorage/main/%7E/BlogIMG_20250207_141915_087.jpg" alt=""><img src="https://raw.githubusercontent.com/ShigureCN/ImageStorage/main/%7E/BlogIMG_20250207_141914_322.jpg" alt=""><img src="https://raw.githubusercontent.com/ShigureCN/ImageStorage/main/%7E/BlogIMG_20250207_141914_849.jpg" alt=""></p>
+<p>还挺好看的</p>
+<h1 id="升华"><a href="#升华" class="headerlink" title="升华"></a>升华</h1><p>一直喜欢类原生的风格却一直拖到现在（<br>玩机新人借鉴了很多网上的资料，再次感谢酷安<a target="_blank" rel="noopener" href="http://www.coolapk.com/u/2081207">@锦里哩</a><br>这个是我目前用下来的类原生bug最少的一个，当然版本也比较旧了，以后在xda上遇到了比较有意思的会试着转载下来再发个教程。</p>
+<h1 id="网盘链接"><a href="#网盘链接" class="headerlink" title="网盘链接"></a>网盘链接</h1><p>我的百度盘大包</p>
+<blockquote>
+<p>通过网盘分享的文件：platform-tools.rar<br>链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1IsDRo9Tnn75Np2WExiYYTw?pwd=ti8k">https://pan.baidu.com/s/1IsDRo9Tnn75Np2WExiYYTw?pwd=ti8k</a> 提取码: ti8k<br>—来自百度网盘超级会员v5的分享</p>
+</blockquote>
+<p>酷安<a target="_blank" rel="noopener" href="http://www.coolapk.com/u/2081207">@锦里哩</a>佬的包</p>
+<blockquote>
+<p>系统 <a target="_blank" rel="noopener" href="https://cloud.189.cn/t/jAn2yaJfA32i">https://cloud.189.cn/t/jAn2yaJfA32i</a> 访问码：8uwy。<br>模块软件 <a target="_blank" rel="noopener" href="https://cloud.189.cn/t/IVFVvqu6rMNv">https://cloud.189.cn/t/IVFVvqu6rMNv</a> （访问码：h2nt）</p>
+</blockquote>
+<h1 id="引用资料"><a href="#引用资料" class="headerlink" title="引用资料"></a>引用资料</h1><p>[1] <a target="_blank" rel="noopener" href="https://www.coolapk.com/feed/43308367">https://www.coolapk.com/feed/43308367</a><br>[2] <a target="_blank" rel="noopener" href="https://miuiver.com/">https://miuiver.com/</a><br>[3] <a target="_blank" rel="noopener" href="https://xiaomirom.com/">https://xiaomirom.com/</a><br>[4] <a target="_blank" rel="noopener" href="https://bitgapps.io/">https://bitgapps.io/</a><br>[5] <a target="_blank" rel="noopener" href="https://www.mobile01.com/topicdetail.php?f=565&amp;t=7047450">https://www.mobile01.com/topicdetail.php?f=565&amp;t=7047450</a><br>如有侵权或让您感到不适请及时联系我，我会及时修改或删除</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://example.com">時雨空</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2025/02/07/REDMI-Note-10-Pro-chopin-%E5%88%B7%E5%85%A5CrDroid%E7%B1%BB%E5%8E%9F%E7%94%9F-%E5%90%ABgapps-%E6%95%99%E7%A8%8B/">http://example.com/2025/02/07/REDMI-Note-10-Pro-chopin-%E5%88%B7%E5%85%A5CrDroid%E7%B1%BB%E5%8E%9F%E7%94%9F-%E5%90%ABgapps-%E6%95%99%E7%A8%8B/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://example.com" target="_blank">Shigure's Blog</a>！</span></div></div><div class="tag_share"><div class="post-share"><div class="social-share" data-image="/image/avatar.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/2025/01/27/%E3%80%90%E7%9F%AD%E7%AF%87%E3%80%91%E7%AA%81%E7%84%B6%E6%83%B3%E6%98%8E%E7%99%BD%E4%BA%86%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%AD%A6%E5%9F%BA%E7%A1%80%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" title="【短篇】突然想明白了为什么要学基础排序算法"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">【短篇】突然想明白了为什么要学基础排序算法</div></div><div class="info-2"><div class="info-item-1">先看看题 输入 （ 且  为奇数）个数字 （），输出这些数字的第  小的数。最小的数是第  小。 最初的想法是sort排序 ，然后输出第k个数，但是这样写只能拿到60pt，显然不能这样做。既然我们必须要进行排序，那么我们只能进一步的针对性优化我们的排序算法。我选择的是快排优化（我的快排板子↓）12345678910111213void quick_sort(int q[], int l, int r){    if (l &gt;= r) return;    int i = l - 1, j = r + 1, x = q[l + r &gt;&gt; 1];    while (i &lt; j)    {        do i ++ ; while (q[i] &lt; x);        do j -- ; while (q[j] &gt; x);        if (i &lt; j) swap(q[i], q[j]);    }    quick_sort(q, l, j), quick_sort(q, j + 1,...</div></div></div></a></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/image/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">時雨空</div><div class="author-info-description">人是會思考的蘆葦</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">11</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/ShigureCN"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E6%97%A0%E4%BB%B7%EF%BC%8C%E8%AF%B7%E5%A4%87%E4%BB%BD%E5%A5%BD%E6%95%B0%E6%8D%AE%E5%86%8D%E8%BF%9B%E8%A1%8C%E5%88%B7%E6%9C%BA"><span class="toc-number">1.</span> <span class="toc-text">数据无价，请备份好数据再进行刷机</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E6%97%A0%E4%BB%B7%EF%BC%8C%E8%AF%B7%E5%A4%87%E4%BB%BD%E5%A5%BD%E6%95%B0%E6%8D%AE%E5%86%8D%E8%BF%9B%E8%A1%8C%E5%88%B7%E6%9C%BA-1"><span class="toc-number">2.</span> <span class="toc-text">数据无价，请备份好数据再进行刷机</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E6%97%A0%E4%BB%B7%EF%BC%8C%E8%AF%B7%E5%A4%87%E4%BB%BD%E5%A5%BD%E6%95%B0%E6%8D%AE%E5%86%8D%E8%BF%9B%E8%A1%8C%E5%88%B7%E6%9C%BA-2"><span class="toc-number">3.</span> <span class="toc-text">数据无价，请备份好数据再进行刷机</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%B5%B7%E5%9B%A0"><span class="toc-number">4.</span> <span class="toc-text">起因</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E8%A7%A3%E9%94%81boot-loader"><span class="toc-number">5.</span> <span class="toc-text">1. 解锁boot loader</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E9%80%9A%E8%BF%87miflash%E5%88%B7%E5%85%A5%E5%BA%95%E5%8C%85"><span class="toc-number">6.</span> <span class="toc-text">2.通过miflash刷入底包</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E5%88%B7%E5%85%A5%E7%B1%BB%E5%8E%9F%E7%94%9F%EF%BC%81%EF%BC%81"><span class="toc-number">7.</span> <span class="toc-text">3. 刷入类原生！！</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-%E5%88%B7%E5%85%A5recovery"><span class="toc-number">7.1.</span> <span class="toc-text">3.1 刷入recovery</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-%E5%88%B7%E5%85%A5%E7%B3%BB%E7%BB%9F"><span class="toc-number">7.2.</span> <span class="toc-text">3.2 刷入系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3-%E5%88%B7%E5%85%A5magisk%EF%BC%88%E5%8F%AF%E9%80%89%EF%BC%89"><span class="toc-number">7.3.</span> <span class="toc-text">3.3 刷入magisk（可选）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-4-%E5%88%B7%E5%85%A5gapps%EF%BC%88%E5%8F%AF%E9%80%89%EF%BC%89"><span class="toc-number">7.4.</span> <span class="toc-text">3.4 刷入gapps（可选）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-magisk%E7%AE%80%E5%8D%95%E7%BE%8E%E5%8C%96%E4%B8%8B%E7%B3%BB%E7%BB%9F"><span class="toc-number">8.</span> <span class="toc-text">4. magisk简单美化下系统</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-%E8%A7%A3%E5%86%B3%E7%BD%91%E7%BB%9C%EF%BC%81%E9%97%AE%E9%A2%98"><span class="toc-number">9.</span> <span class="toc-text">5.解决网络！问题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%88%90%E6%9E%9C"><span class="toc-number">10.</span> <span class="toc-text">成果</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8D%87%E5%8D%8E"><span class="toc-number">11.</span> <span class="toc-text">升华</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BD%91%E7%9B%98%E9%93%BE%E6%8E%A5"><span class="toc-number">12.</span> <span class="toc-text">网盘链接</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%95%E7%94%A8%E8%B5%84%E6%96%99"><span class="toc-number">13.</span> <span class="toc-text">引用资料</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/02/07/REDMI-Note-10-Pro-chopin-%E5%88%B7%E5%85%A5CrDroid%E7%B1%BB%E5%8E%9F%E7%94%9F-%E5%90%ABgapps-%E6%95%99%E7%A8%8B/" title="REDMI Note 10 Pro (chopin)刷入CrDroid类原生(含gapps)教程">REDMI Note 10 Pro (chopin)刷入CrDroid类原生(含gapps)教程</a><time datetime="2025-02-07T06:45:21.000Z" title="发表于 2025-02-07 14:45:21">2025-02-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/01/27/%E3%80%90%E7%9F%AD%E7%AF%87%E3%80%91%E7%AA%81%E7%84%B6%E6%83%B3%E6%98%8E%E7%99%BD%E4%BA%86%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%AD%A6%E5%9F%BA%E7%A1%80%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" title="【短篇】突然想明白了为什么要学基础排序算法">【短篇】突然想明白了为什么要学基础排序算法</a><time datetime="2025-01-27T08:45:25.000Z" title="发表于 2025-01-27 16:45:25">2025-01-27</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/01/24/%E4%BD%BF%E7%94%A8vscode%E5%AE%9E%E7%8E%B0%E8%BD%BB%E9%87%8F%E7%9A%84%E7%AB%9E%E8%B5%9B%E9%85%8D%E7%BD%AE/" title="使用vscode实现轻量的竞赛配置">使用vscode实现轻量的竞赛配置</a><time datetime="2025-01-24T08:23:18.000Z" title="发表于 2025-01-24 16:23:18">2025-01-24</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/01/24/%E7%89%9B%E5%AE%A2%E5%AF%92%E5%81%87%E8%90%A5%E7%AC%AC%E4%B8%80%E5%9C%BA%E8%A1%A5%E9%A2%98/" title="牛客寒假营第一场补题">牛客寒假营第一场补题</a><time datetime="2025-01-24T08:21:55.000Z" title="发表于 2025-01-24 16:21:55">2025-01-24</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/01/14/test/" title="test">test</a><time datetime="2025-01-14T04:06:31.000Z" title="发表于 2025-01-14 12:06:31">2025-01-14</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2025 By 時雨空</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"><script>(() => {
+  const loadMathjax = () => {
+    if (!window.MathJax) {
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          tags: 'none',
+        },
+        chtml: {
+          scale: 1.1
+        },
+        options: {
+          enableMenu: true,
+          renderActions: {
+            findScript: [10, doc => {
+              for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+                const display = !!node.type.match(/; *mode=display/)
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+                const text = document.createTextNode('')
+                node.parentNode.replaceChild(text, node)
+                math.start = {node: text, delim: '', n: 0}
+                math.end = {node: text, delim: '', n: 0}
+                doc.math.push(math)
+              }
+            }, '']
+          }
+        }
+      }
+      
+      const script = document.createElement('script')
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+      script.id = 'MathJax-script'
+      script.async = true
+      document.head.appendChild(script)
+    } else {
+      MathJax.startup.document.state(0)
+      MathJax.texReset()
+      MathJax.typesetPromise()
+    }
+  }
+
+  btf.addGlobalFn('encrypt', loadMathjax, 'mathjax')
+  window.pjax ? loadMathjax() : window.addEventListener('load', loadMathjax)
+})()</script><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.isShuoshuo
+  const option = null
+
+  const commentCount = n => {
+    const isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+    if (isCommentCount) {
+      isCommentCount.textContent= n
+    }
+  }
+
+  const initGitalk = (el, path) => {
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyGitalk = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+
+    const gitalk = new Gitalk({
+      clientID: 'Ov23liA04JPuAVUoTa8f',
+      clientSecret: 'b17c4f2572f22a805159b3d25a585133a748e997',
+      repo: 'blog_comment',
+      owner: 'ShigureCN',
+      admin: ['ShigureCN'],
+      updateCountCallback: commentCount,
+      ...option,
+      id: isShuoshuo ? path : (option && option.id) || 'ffe1425a206e1734ab3e5f47c68314a3'
+    })
+
+    gitalk.render('gitalk-container')
+  }
+
+  const loadGitalk = async(el, path) => {
+    if (typeof Gitalk === 'function') initGitalk(el, path)
+    else {
+      await btf.getCSS('https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css')
+      await btf.getScript('https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js')
+      initGitalk(el, path)
+    }
+  }
+
+  if (isShuoshuo) {
+    'Gitalk' === 'Gitalk'
+      ? window.shuoshuoComment = { loadComment: loadGitalk }
+      : window.loadOtherComment = loadGitalk
+    return
+  }
+
+  if ('Gitalk' === 'Gitalk' || !false) {
+    if (false) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+    else loadGitalk()
+  } else {
+    window.loadOtherComment = loadGitalk
+  }
+})()</script></div><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
