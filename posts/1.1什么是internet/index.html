@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="zh-cn">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <title>1.1什么是Internet // ShigureSora</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.147.9">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="ShigureSora" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="/css/main.min.5b1fcc8902588589c4767187402a3c29f8b8d7a6fdef6d9f8f77045bb0d14fee.css" />
+    
+
+    
+    
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="1.1什么是Internet">
+  <meta name="twitter:description" content="1.1什么是Internet 从具体构成角度 节点
+主机及其上运行的应用程序 路由器、交换机等网络交换设备 边：通信链路
+接入网链路：主机连接到互联网的链路 主干链路：路由器间的链路 协议
+Internet 中所有的通信 行为都受协议制约 协议定义了在两个或多个通信实体之间交换的报文格式和次序，以及在报文传输和 / 或接受或其他时间方面所采取的动作
+数以亿计的、互联的计算设备:
+主机= 端系统 运行网络应用程序 通信链路
+光纤、同轴电缆、无线电、卫星 传输速率 = 带宽（bps） 分组交换设备：转发分组(packets)
+路由器和交换机 协议控制发送、接收消息
+如TCP、IP、HTTP、FTP、 PPP Internet：“网络的网络”
+松散的层次结构，互连的ISP 公共Internet vs. 专用intranet Internet标准
+RFC: Request for comments IETF: Internet Engineering Task Force 从服务角度 使用通信设施进行通信的分布式应用
+Web、VoIP、email、分布式 游戏、电子商务、社交网络 通信基础设施为apps提供编程接口（通信服务）
+将发送和接收数据的apps与 互联网连接起来 为app应用提供服务选择，类似于邮政服务： 无连接不可靠服务 面向连接的可靠服务">
+
+    <meta property="og:url" content="http://localhost:1313/posts/1.1%E4%BB%80%E4%B9%88%E6%98%AFinternet/">
+  <meta property="og:site_name" content="ShigureSora">
+  <meta property="og:title" content="1.1什么是Internet">
+  <meta property="og:description" content="1.1什么是Internet 从具体构成角度 节点
+主机及其上运行的应用程序 路由器、交换机等网络交换设备 边：通信链路
+接入网链路：主机连接到互联网的链路 主干链路：路由器间的链路 协议
+Internet 中所有的通信 行为都受协议制约 协议定义了在两个或多个通信实体之间交换的报文格式和次序，以及在报文传输和 / 或接受或其他时间方面所采取的动作
+数以亿计的、互联的计算设备:
+主机= 端系统 运行网络应用程序 通信链路
+光纤、同轴电缆、无线电、卫星 传输速率 = 带宽（bps） 分组交换设备：转发分组(packets)
+路由器和交换机 协议控制发送、接收消息
+如TCP、IP、HTTP、FTP、 PPP Internet：“网络的网络”
+松散的层次结构，互连的ISP 公共Internet vs. 专用intranet Internet标准
+RFC: Request for comments IETF: Internet Engineering Task Force 从服务角度 使用通信设施进行通信的分布式应用
+Web、VoIP、email、分布式 游戏、电子商务、社交网络 通信基础设施为apps提供编程接口（通信服务）
+将发送和接收数据的apps与 互联网连接起来 为app应用提供服务选择，类似于邮政服务： 无连接不可靠服务 面向连接的可靠服务">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-07-06T18:26:12+08:00">
+    <meta property="article:modified_time" content="2025-07-06T18:26:12+08:00">
+    <meta property="article:tag" content="计算机">
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="/"><img class="app-header-avatar" src="/avatar.jpg" alt="ShigureSora" /></a>
+      <span class="app-header-title">ShigureSora</span>
+      <nav class="app-header-menu">
+          <a class="app-header-menu-item" href="/">Home</a>
+             - 
+          
+          <a class="app-header-menu-item" href="/tags/">Tags</a>
+             - 
+          
+          <a class="app-header-menu-item" href="/about/">About</a>
+      </nav>
+      <p>人是会思考的芦苇</p>
+      <div class="app-header-social">
+        
+          <a href="https://github.com/ShigureCN" target="_blank" rel="noreferrer noopener me">
+            <svg class="icon icon-github" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>github</title><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+          </a>
+        
+          <a href="https://twitter.com/shiguresoradesu" target="_blank" rel="noreferrer noopener me">
+            <svg class="icon icon-twitter" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>twitter</title><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+          </a>
+        
+          <a href="https://t.me/shigure_tg" target="_blank" rel="noreferrer noopener me">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-link">
+  <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+  <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+          </a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">1.1什么是Internet</h1>
+      <div class="post-meta">
+        <div>
+          <svg class="icon icon-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>calendar</title><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          Jul 6, 2025
+        </div>
+        <div>
+          <svg class="icon icon-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>clock</title><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          1 min read
+        </div>
+        <div>
+          <svg class="icon icon-tag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>tag</title><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+              <a class="tag" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a>
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      <h1 id="11什么是internet">1.1什么是Internet</h1>
+<h2 id="从具体构成角度">从具体构成角度</h2>
+<p>节点</p>
+<ul>
+<li>主机及其上运行的应用程序</li>
+<li>路由器、交换机等网络交换设备</li>
+</ul>
+<p>边：通信链路</p>
+<ul>
+<li>接入网链路：主机连接到互联网的链路</li>
+<li>主干链路：路由器间的链路</li>
+</ul>
+<p>协议</p>
+<ul>
+<li>Internet 中所有的通信 行为都受协议制约</li>
+</ul>
+<blockquote>
+<p>协议定义了在两个或多个通信实体之间交换的<strong>报文格式</strong>和<strong>次序</strong>，以及在报文传输和 / 或接受或其他时间方面所采取的<strong>动作</strong></p></blockquote>
+<p>数以亿计的、互联的计算设备:</p>
+<ul>
+<li><strong>主机= 端系统</strong></li>
+<li>运行<strong>网络应用程序</strong></li>
+</ul>
+<p><strong>通信链路</strong></p>
+<ul>
+<li>光纤、同轴电缆、无线电、卫星</li>
+<li>传输速率 = <strong>带宽（bps）</strong></li>
+</ul>
+<p><strong>分组交换设备</strong>：转发分组(packets)</p>
+<ul>
+<li>路由器和交换机</li>
+</ul>
+<p><strong>协议</strong>控制发送、接收消息</p>
+<ul>
+<li>如TCP、IP、HTTP、FTP、 PPP</li>
+</ul>
+<p><strong>Internet：“网络的网络”</strong></p>
+<ul>
+<li>松散的层次结构，互连的ISP</li>
+<li>公共Internet vs. 专用intranet</li>
+</ul>
+<p>Internet标准</p>
+<ul>
+<li>RFC: Request for comments</li>
+<li>IETF: Internet Engineering  Task Force</li>
+</ul>
+<h2 id="从服务角度">从服务角度</h2>
+<p><strong>使用通信设施进行通信的<em>分布式应用</em></strong></p>
+<ul>
+<li>Web、VoIP、email、分布式 游戏、电子商务、社交网络</li>
+</ul>
+<p><strong>通信基础设施为apps提供编程接口（通信服务）</strong></p>
+<ul>
+<li>将发送和接收数据的apps与 互联网连接起来</li>
+<li>为app应用提供服务选择，类似于邮政服务：
+<ul>
+<li>无连接不可靠服务</li>
+<li>面向连接的可靠服务</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>

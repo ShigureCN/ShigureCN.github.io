@@ -2,18 +2,32 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on ShigureSora</title>
-    <link>http://localhost:39659/posts/</link>
+    <link>http://localhost:1313/posts/</link>
     <description>Recent content in Posts on ShigureSora</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 03 Jul 2025 17:51:18 +0800</lastBuildDate>
-    <atom:link href="http://localhost:39659/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 06 Jul 2025 18:26:12 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>1.1什么是Internet</title>
+      <link>http://localhost:1313/posts/1.1%E4%BB%80%E4%B9%88%E6%98%AFinternet/</link>
+      <pubDate>Sun, 06 Jul 2025 18:26:12 +0800</pubDate>
+      <guid>http://localhost:1313/posts/1.1%E4%BB%80%E4%B9%88%E6%98%AFinternet/</guid>
+      <description>&lt;h1 id=&#34;11什么是internet&#34;&gt;1.1什么是Internet&lt;/h1&gt;&#xA;&lt;h2 id=&#34;从具体构成角度&#34;&gt;从具体构成角度&lt;/h2&gt;&#xA;&lt;p&gt;节点&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;主机及其上运行的应用程序&lt;/li&gt;&#xA;&lt;li&gt;路由器、交换机等网络交换设备&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;边：通信链路&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;接入网链路：主机连接到互联网的链路&lt;/li&gt;&#xA;&lt;li&gt;主干链路：路由器间的链路&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;协议&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Internet 中所有的通信 行为都受协议制约&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;协议定义了在两个或多个通信实体之间交换的&lt;strong&gt;报文格式&lt;/strong&gt;和&lt;strong&gt;次序&lt;/strong&gt;，以及在报文传输和 / 或接受或其他时间方面所采取的&lt;strong&gt;动作&lt;/strong&gt;&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;数以亿计的、互联的计算设备:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;主机= 端系统&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;li&gt;运行&lt;strong&gt;网络应用程序&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;通信链路&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;光纤、同轴电缆、无线电、卫星&lt;/li&gt;&#xA;&lt;li&gt;传输速率 = &lt;strong&gt;带宽（bps）&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;分组交换设备&lt;/strong&gt;：转发分组(packets)&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;路由器和交换机&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;协议&lt;/strong&gt;控制发送、接收消息&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;如TCP、IP、HTTP、FTP、 PPP&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;Internet：“网络的网络”&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;松散的层次结构，互连的ISP&lt;/li&gt;&#xA;&lt;li&gt;公共Internet vs. 专用intranet&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Internet标准&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;RFC: Request for comments&lt;/li&gt;&#xA;&lt;li&gt;IETF: Internet Engineering  Task Force&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;从服务角度&#34;&gt;从服务角度&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;使用通信设施进行通信的&lt;em&gt;分布式应用&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Web、VoIP、email、分布式 游戏、电子商务、社交网络&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;通信基础设施为apps提供编程接口（通信服务）&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;将发送和接收数据的apps与 互联网连接起来&lt;/li&gt;&#xA;&lt;li&gt;为app应用提供服务选择，类似于邮政服务：&#xA;&lt;ul&gt;&#xA;&lt;li&gt;无连接不可靠服务&lt;/li&gt;&#xA;&lt;li&gt;面向连接的可靠服务&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
     <item>
       <title>HelloHugo</title>
-      <link>http://localhost:39659/posts/hellohugo/</link>
+      <link>http://localhost:1313/posts/hellohugo/</link>
       <pubDate>Thu, 03 Jul 2025 17:51:18 +0800</pubDate>
-      <guid>http://localhost:39659/posts/hellohugo/</guid>
+      <guid>http://localhost:1313/posts/hellohugo/</guid>
       <description>&lt;p&gt;&lt;del&gt;再次败给了好看的个人博客&lt;/del&gt;&lt;/p&gt;&#xA;&lt;p&gt;看起来很简洁，很戳我的审美（&#xA;以后会将notion的博客文章也一起搬过来&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>为什么我认为《百年孤独》当成一本纯粹的小说看待是可以被允许的</title>
+      <link>http://localhost:1313/posts/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E8%AE%A4%E4%B8%BA%E7%99%BE%E5%B9%B4%E5%AD%A4%E7%8B%AC%E5%BD%93%E6%88%90%E4%B8%80%E6%9C%AC%E7%BA%AF%E7%B2%B9%E7%9A%84%E5%B0%8F%E8%AF%B4%E7%9C%8B%E5%BE%85%E6%98%AF%E5%8F%AF%E4%BB%A5%E8%A2%AB%E5%85%81%E8%AE%B8%E7%9A%84/</link>
+      <pubDate>Sun, 16 Mar 2025 18:24:15 +0800</pubDate>
+      <guid>http://localhost:1313/posts/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E8%AE%A4%E4%B8%BA%E7%99%BE%E5%B9%B4%E5%AD%A4%E7%8B%AC%E5%BD%93%E6%88%90%E4%B8%80%E6%9C%AC%E7%BA%AF%E7%B2%B9%E7%9A%84%E5%B0%8F%E8%AF%B4%E7%9C%8B%E5%BE%85%E6%98%AF%E5%8F%AF%E4%BB%A5%E8%A2%AB%E5%85%81%E8%AE%B8%E7%9A%84/</guid>
+      <description>&lt;h1 id=&#34;为什么我认为百年孤独当成一本纯粹的小说看待是可以被允许的&#34;&gt;为什么我认为《百年孤独》当成一本纯粹的小说看待是可以被允许的&lt;/h1&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;多年后，面对行刑队，奥雷利亚诺布恩迪亚上校将会回想起，他父亲带他去见识冰块的那个遥远的下午&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;多么优美的时间感啊。当我第一次读这句话时并没有什么特别的感受，因为那是我初读这本书，大脑还沉浸在繁杂的前言中。&lt;/p&gt;&#xA;&lt;p&gt;幸运的是，我喜欢重复阅读。当我读完那个极具震撼力的结尾后，我又翻回到第一页—&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;多年后，面对行刑队，奥雷利亚诺布恩迪亚上校将会回想起，他父亲带他去见识冰块的那个遥远的下午&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;这段文字优美得让人忍不住反复品读。&lt;/p&gt;&#xA;&lt;p&gt;结尾带来的震撼余韵尚未散去，再读开篇，文字的美感更加深刻。&lt;/p&gt;&#xA;&lt;p&gt;但当我看到评论——&lt;/p&gt;&#xA;&lt;p&gt;&amp;ldquo;分析小说人物名称啊吧啊吧啊吧&amp;rdquo;&lt;/p&gt;&#xA;&lt;p&gt;我认为，这就是一部小说，而不是高中语文的阅读理解题。那些细节可以当作作者埋下的彩蛋，过分解读只会引来更多&amp;quot;专家&amp;quot;进行&amp;quot;文学鉴赏&amp;quot;。&lt;/p&gt;&#xA;&lt;p&gt;我很敬佩我的高中语文老师。那天她坦言没有耐心读完《百年孤独》。我能理解，因为她是按照语文课标的方式在读：课标要求我们&amp;quot;读书要写写画画&amp;quot;，&amp;ldquo;画人物关系图&amp;rdquo;。&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;为什么？&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;我为什么要这样读书？我只是出于纯粹的兴趣阅读，为什么不能放下心来，让大脑放空，去感受剧情、故事、历史与文学？&lt;/p&gt;&#xA;&lt;p&gt;我读书为什么非要如此？为什么要这样？&lt;/p&gt;&#xA;&lt;p&gt;当我静心阅读时，能感受到一切；当我功利性地读，却感受不到快乐。&lt;/p&gt;&#xA;&lt;p&gt;而我们读书，不就是为了获得快乐与共鸣吗？&lt;/p&gt;&#xA;&lt;p&gt;没有快乐，不去寻找共鸣，&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;我凭什么读书&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;我在初中时读了《百年孤独》，很庆幸是在那时候读的，那时的我还很纯粹，不会想很多东西，只是沉浸在马孔多的世界里，感受“历史感”。&lt;/p&gt;&#xA;&lt;p&gt;所以我还是比较推荐在第一次读一本书的时候，纯粹的去享受剧情是个非常好的选择&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
