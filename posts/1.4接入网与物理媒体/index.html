@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="zh-cn">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <title>1.4接入网与物理媒体 // ShigureSora</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.147.9">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="ShigureSora" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="/css/main.min.5b1fcc8902588589c4767187402a3c29f8b8d7a6fdef6d9f8f77045bb0d14fee.css" />
+    
+
+    
+    
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="1.4接入网与物理媒体">
+  <meta name="twitter:description" content="1.4 接入网和物理媒体 Q: 怎样将端系统和边缘路由器连接？
+住宅接入网络
+单位接入网络
+无线接入网络
+注意：
+接入网络的带宽（bits per second）？
+共享/专用？？
+接入网 住宅接入：modem 将上网数据调制加载音频信号上，在电话线上传输，在局端将其中的数据解调出来；反之亦然
+解频 调幅 调相位 综合调制 拨号调制解调器
+56Kbps 的速率直接接入路由器（通常更低） 不能同时上网和打电话：不能重视在线 接入网：digital subscriber line（DSL） 采用现存的到交换局DSLAM的电话线
+DSL线路上的数据被传到互联网 DSL线路上的语言被穿到电话网 &lt; 2.5 Mbps 上行传输速率（typically &lt; 1 Mbps）
+&lt; 24 Mbps 下行传输速率 （typically &lt; 10 Mbps）
+接入网：线缆网络 有线电视型号线缆双向改造
+FDM：在不同频段传输不同信道的数据，数字电视和上网数据（上下行）
+HFC ：hybrid fiber coax
+非对称：最高30Mbps的下行传输速率，2Mbps 上行传输速率 线缆和光纤网络 将各个家庭用户接入到 ISP 路由器
+各用户共享到线缆头端的接入网络
+与DSL不同，DSL每个用户一个专用线路到CO（central office） 住宅接入：电缆模式 接入网：家庭网络 企业接入网络（Ethernet） 经常被企业或者大学等机构采用">
+
+    <meta property="og:url" content="http://localhost:1313/posts/1.4%E6%8E%A5%E5%85%A5%E7%BD%91%E4%B8%8E%E7%89%A9%E7%90%86%E5%AA%92%E4%BD%93/">
+  <meta property="og:site_name" content="ShigureSora">
+  <meta property="og:title" content="1.4接入网与物理媒体">
+  <meta property="og:description" content="1.4 接入网和物理媒体 Q: 怎样将端系统和边缘路由器连接？
+住宅接入网络
+单位接入网络
+无线接入网络
+注意：
+接入网络的带宽（bits per second）？
+共享/专用？？
+接入网 住宅接入：modem 将上网数据调制加载音频信号上，在电话线上传输，在局端将其中的数据解调出来；反之亦然
+解频 调幅 调相位 综合调制 拨号调制解调器
+56Kbps 的速率直接接入路由器（通常更低） 不能同时上网和打电话：不能重视在线 接入网：digital subscriber line（DSL） 采用现存的到交换局DSLAM的电话线
+DSL线路上的数据被传到互联网 DSL线路上的语言被穿到电话网 &lt; 2.5 Mbps 上行传输速率（typically &lt; 1 Mbps）
+&lt; 24 Mbps 下行传输速率 （typically &lt; 10 Mbps）
+接入网：线缆网络 有线电视型号线缆双向改造
+FDM：在不同频段传输不同信道的数据，数字电视和上网数据（上下行）
+HFC ：hybrid fiber coax
+非对称：最高30Mbps的下行传输速率，2Mbps 上行传输速率 线缆和光纤网络 将各个家庭用户接入到 ISP 路由器
+各用户共享到线缆头端的接入网络
+与DSL不同，DSL每个用户一个专用线路到CO（central office） 住宅接入：电缆模式 接入网：家庭网络 企业接入网络（Ethernet） 经常被企业或者大学等机构采用">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-07-10T16:35:18+08:00">
+    <meta property="article:modified_time" content="2025-07-10T16:35:18+08:00">
+    <meta property="article:tag" content="计算机网络">
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="/"><img class="app-header-avatar" src="/avatar.jpg" alt="ShigureSora" /></a>
+      <span class="app-header-title">ShigureSora</span>
+      <nav class="app-header-menu">
+          <a class="app-header-menu-item" href="/">Home</a>
+             - 
+          
+          <a class="app-header-menu-item" href="/tags/">Tags</a>
+             - 
+          
+          <a class="app-header-menu-item" href="/about/">About</a>
+      </nav>
+      <p>人是会思考的芦苇</p>
+      <div class="app-header-social">
+        
+          <a href="https://github.com/ShigureCN" target="_blank" rel="noreferrer noopener me">
+            <svg class="icon icon-github" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>github</title><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+          </a>
+        
+          <a href="https://twitter.com/shiguresoradesu" target="_blank" rel="noreferrer noopener me">
+            <svg class="icon icon-twitter" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>twitter</title><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+          </a>
+        
+          <a href="https://t.me/shigure_tg" target="_blank" rel="noreferrer noopener me">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-link">
+  <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+  <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+          </a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">1.4接入网与物理媒体</h1>
+      <div class="post-meta">
+        <div>
+          <svg class="icon icon-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>calendar</title><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          Jul 10, 2025
+        </div>
+        <div>
+          <svg class="icon icon-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>clock</title><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          1 min read
+        </div>
+        <div>
+          <svg class="icon icon-tag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>tag</title><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+              <a class="tag" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      <h1 id="14-接入网和物理媒体">1.4 接入网和物理媒体</h1>
+<p><strong>Q: 怎样将端系统和边缘路由器连接？</strong></p>
+<p>住宅接入网络</p>
+<p>单位接入网络</p>
+<p>无线接入网络</p>
+<p><em>注意：</em></p>
+<p>接入网络的带宽（bits per second）？</p>
+<p>共享/专用？？</p>
+<hr>
+<h1 id="接入网">接入网</h1>
+<h2 id="住宅接入modem">住宅接入：modem</h2>
+<p>将上网数据<strong>调制</strong>加载音频信号上，在电话线上传输，在局端将其中的数据<strong>解调</strong>出来；反之亦然</p>
+<ul>
+<li>解频</li>
+<li>调幅</li>
+<li>调相位</li>
+<li>综合调制</li>
+</ul>
+<p><strong>拨号调制解调器</strong></p>
+<ul>
+<li>56Kbps 的速率直接接入路由器（通常更低）</li>
+<li>不能同时上网和打电话：不能重视在线</li>
+</ul>
+<hr>
+<h2 id="接入网digital-subscriber-linedsl">接入网：digital subscriber line（DSL）</h2>
+<p><img src="https://photobed.shigures.me/image-20250710151642149.png" alt="image-20250710151642149"></p>
+<p>采用<strong>现存的</strong>到交换局DSLAM的电话线</p>
+<ul>
+<li>DSL线路上的数据被传到互联网</li>
+<li>DSL线路上的语言被穿到电话网</li>
+</ul>
+<p>&lt; 2.5 Mbps 上行传输速率（typically &lt; 1 Mbps）</p>
+<p>&lt; 24 Mbps 下行传输速率 （typically &lt; 10 Mbps）</p>
+<hr>
+<h2 id="接入网线缆网络">接入网：线缆网络</h2>
+<p><img src="https://photobed.shigures.me/image-20250710152016358.png" alt="image-20250710152016358" style="zoom:50%;" /></p>
+<p>有线电视型号线缆双向改造</p>
+<p>FDM：在不同频段传输不同信道的数据，数字电视和上网数据（上下行）</p>
+<p><img src="https://photobed.shigures.me/image-20250710152152552.png" alt="image-20250710152152552" style="zoom:80%;" /></p>
+<p>HFC ：hybrid fiber coax</p>
+<ul>
+<li>非对称：最高30Mbps的下行传输速率，2Mbps 上行传输速率</li>
+</ul>
+<p><em>线缆和光纤网络</em> 将各个家庭用户接入到 ISP 路由器</p>
+<p>各用户共享到线缆头端的接入网络</p>
+<ul>
+<li>与DSL不同，DSL每个用户一个专用线路到CO（central office）</li>
+</ul>
+<hr>
+<h2 id="住宅接入电缆模式">住宅接入：电缆模式</h2>
+<p><img src="https://photobed.shigures.me/image-20250710153051687.png" alt="image-20250710153051687" style="zoom:80%;" /></p>
+<hr>
+<h2 id="接入网家庭网络">接入网：家庭网络</h2>
+<p><img src="https://photobed.shigures.me/image-20250710153201548.png" alt="image-20250710153201548" style="zoom:50%;" /></p>
+<hr>
+<h2 id="企业接入网络ethernet">企业接入网络（Ethernet）</h2>
+<p><img src="https://photobed.shigures.me/image-20250710153241097.png" alt="image-20250710153241097" style="zoom:50%;" /></p>
+<p>经常被企业或者大学等机构采用</p>
+<ul>
+<li>10 Mbps、100Mbps、1Gbps、10Gbps传输率</li>
+<li>现在端系统经常直接接到以太网络交换机上</li>
+</ul>
+<hr>
+<h2 id="无线接入网络">无线接入网络</h2>
+<p>各无线端系统共享无线接入网络（端系统到无线路由器）</p>
+<ul>
+<li>通过基站或者叫接入点</li>
+</ul>
+<p><strong>无线LANs：</strong></p>
+<ul>
+<li>建筑物内部（100 ft）</li>
+<li>802.11b/g（ Wi-Fi ）：11，54Mbps 传输速率</li>
+</ul>
+<p><img src="https://photobed.shigures.me/image-20250710153716341.png" alt="image-20250710153716341" style="zoom:33%;" /></p>
+<p><strong>广域无线接入：</strong></p>
+<ul>
+<li>有电信运营商提供（cellular），10‘s km</li>
+<li>1到10Mbps</li>
+<li>3G、4G： LTE</li>
+</ul>
+<p><img src="https://photobed.shigures.me/image-20250710153848833.png" alt="image-20250710153848833" style="zoom:33%;" /></p>
+<hr>
+<h1 id="物理媒体">物理媒体</h1>
+<p><strong>Bit</strong> ：在发送-接收对间传播</p>
+<p><strong>物理链路</strong> ：连接每个发送-接收对之间的物理媒体</p>
+<p><strong>导引型媒体：</strong></p>
+<ul>
+<li>信号沿着固体媒介被导引：同轴电缆、光纤、双绞线</li>
+</ul>
+<p><strong>非导引型媒体：</strong></p>
+<ul>
+<li>开放的空间传输电磁波或者光信号，在电磁或者光信号中承载数字数据</li>
+</ul>
+<p><strong>双绞线（TP）</strong></p>
+<p>两根绝缘铜导线拧合</p>
+<ul>
+<li>5类：100Mbps 以太网，Gbps 千兆位以太网</li>
+<li>6类：10Gbps 万兆以太网</li>
+</ul>
+<hr>
+<h2 id="同轴电缆">同轴电缆</h2>
+<p>两根同轴的铜导线</p>
+<p>双向</p>
+<p>基带电缆：</p>
+<ul>
+<li>电缆上一个单个信道</li>
+<li>Ethernet</li>
+</ul>
+<p>宽带电缆：</p>
+<ul>
+<li>电缆上有多个信道</li>
+<li>HFC</li>
+</ul>
+<h2 id="光纤和光缆">光纤和光缆：</h2>
+<p>光脉冲，每个脉冲表示一个bit，在玻璃纤维中传输</p>
+<p>高速：</p>
+<ul>
+<li>点到点的告诉传输（如10Gbps-100Gbps传输速率）</li>
+</ul>
+<p>低误码率：在两个中继器之间可以有很长的距离，不受电磁噪声的干扰</p>
+<p>安全</p>
+<hr>
+<h2 id="无线链路">无线链路</h2>
+<p>开放空间传输电磁波，携带要传输的数据</p>
+<p>无需物理“线缆”</p>
+<p>双向</p>
+<p>传播环境效应：</p>
+<ul>
+<li>反射</li>
+<li>吸收</li>
+<li>干扰</li>
+</ul>
+<p><strong>无线链路类型：</strong></p>
+<p>地面微波</p>
+<ul>
+<li>e.g. up to 45 Mbps channels</li>
+</ul>
+<p>LAN (e.g. , WIFI)</p>
+<ul>
+<li>11Mbps , 54 Mbps  , 540 Mbps&hellip;&hellip;</li>
+</ul>
+<p>wide-area（e.g. , 蜂窝）</p>
+<ul>
+<li>3G cellular: 几Mbps</li>
+<li>4G 10Mbps</li>
+<li>5G 数Gbps</li>
+</ul>
+<p>卫星</p>
+<ul>
+<li>每个信道 若干Kbps 到45Mbps（或者多个聚集信道）</li>
+<li>270 msec端到端延迟</li>
+<li>同步静止卫星和低轨卫星</li>
+</ul>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>
