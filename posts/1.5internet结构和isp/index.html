@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="zh-cn">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <title>1.5Internet结构和ISP // ShigureSora</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.148.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="ShigureSora" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="/css/main.min.5b1fcc8902588589c4767187402a3c29f8b8d7a6fdef6d9f8f77045bb0d14fee.css" />
+    
+
+    
+    
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="1.5Internet结构和ISP">
+  <meta name="twitter:description" content="互联网结构：网络的网络 端系统通过接入ISPs （Internet Service Providers）连接到互联网
+住宅，公司和大学的ISPs 接入ISPs相应的必须是互联的
+因此任何两个端系统课相互发送分组到对方 导致的“网络的网络”非常复杂
+发展和演化是通过经济的和国家的政策来驱动的 让我们采用渐进方法来描述当前互联网的结构
+问题： 给定数百万接入ISPs，如何将它们互联到一起
+选项： 将每个接入ISP都连接到全局ISP（全局范围内覆盖）？
+客户 ISPs和 提供者 ISPs有经济合约
+但是，如果全局ISP是可行的业务，那会有竞争者
+有利可图，一定会有竞争
+竞争： 但如果全局ISP是有利可为的业务，那会有竞争者
+合作： 通过ISP之间的合作可以完成业务的扩展，肯定会有互联，对等互联的结算关系
+……然后业务会细分（全球接入和区域接入），区域网络将出现，用与将接入ISPs连接到全局ISPs
+然后 内容提供商网络（Internet Content Providers , e.g. , Google , Microsoft , Akamai） 可能会构建它们自己的网络，将它们的服务、内容更加靠近端用户，向用户提供更好的服务，减少自己的运营支出
+在网络的最中心，一些为数不多的充分连接的大范围网络（分布广、节点有限、但是之间有着多重连接）
+“tire-1” commercial ISPs (e.g. , Level 3, Sprint , AT&amp;T , NTT)，国家或者国际范围的覆盖 content provider network (e.g. , Google): 将它们的数据中心接入ISP，方便周遍用户的访问；通常私有网络之间用转往绕过第一层ISP和区域ISPs 松散的层次模型
+中心：第一层ISP (如 UUNet, BBN/Genuity, Sprint, AT&amp;T) 国家/国际覆盖，速率极高 直接与其他第一层ISP相连 与大量的第二层ISP和其他客户网络相连">
+
+    <meta property="og:url" content="http://localhost:1313/posts/1.5internet%E7%BB%93%E6%9E%84%E5%92%8Cisp/">
+  <meta property="og:site_name" content="ShigureSora">
+  <meta property="og:title" content="1.5Internet结构和ISP">
+  <meta property="og:description" content="互联网结构：网络的网络 端系统通过接入ISPs （Internet Service Providers）连接到互联网
+住宅，公司和大学的ISPs 接入ISPs相应的必须是互联的
+因此任何两个端系统课相互发送分组到对方 导致的“网络的网络”非常复杂
+发展和演化是通过经济的和国家的政策来驱动的 让我们采用渐进方法来描述当前互联网的结构
+问题： 给定数百万接入ISPs，如何将它们互联到一起
+选项： 将每个接入ISP都连接到全局ISP（全局范围内覆盖）？
+客户 ISPs和 提供者 ISPs有经济合约
+但是，如果全局ISP是可行的业务，那会有竞争者
+有利可图，一定会有竞争
+竞争： 但如果全局ISP是有利可为的业务，那会有竞争者
+合作： 通过ISP之间的合作可以完成业务的扩展，肯定会有互联，对等互联的结算关系
+……然后业务会细分（全球接入和区域接入），区域网络将出现，用与将接入ISPs连接到全局ISPs
+然后 内容提供商网络（Internet Content Providers , e.g. , Google , Microsoft , Akamai） 可能会构建它们自己的网络，将它们的服务、内容更加靠近端用户，向用户提供更好的服务，减少自己的运营支出
+在网络的最中心，一些为数不多的充分连接的大范围网络（分布广、节点有限、但是之间有着多重连接）
+“tire-1” commercial ISPs (e.g. , Level 3, Sprint , AT&amp;T , NTT)，国家或者国际范围的覆盖 content provider network (e.g. , Google): 将它们的数据中心接入ISP，方便周遍用户的访问；通常私有网络之间用转往绕过第一层ISP和区域ISPs 松散的层次模型
+中心：第一层ISP (如 UUNet, BBN/Genuity, Sprint, AT&amp;T) 国家/国际覆盖，速率极高 直接与其他第一层ISP相连 与大量的第二层ISP和其他客户网络相连">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-07-11T18:56:54+08:00">
+    <meta property="article:modified_time" content="2025-07-11T18:56:54+08:00">
+    <meta property="article:tag" content="计算机网络">
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="/"><img class="app-header-avatar" src="/avatar.jpg" alt="ShigureSora" /></a>
+      <span class="app-header-title">ShigureSora</span>
+      <nav class="app-header-menu">
+          <a class="app-header-menu-item" href="/">Home</a>
+             - 
+          
+          <a class="app-header-menu-item" href="/tags/">Tags</a>
+             - 
+          
+          <a class="app-header-menu-item" href="/about/">About</a>
+      </nav>
+      <p>人是会思考的芦苇</p>
+      <div class="app-header-social">
+        
+          <a href="https://github.com/ShigureCN" target="_blank" rel="noreferrer noopener me">
+            <svg class="icon icon-github" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>github</title><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+          </a>
+        
+          <a href="https://twitter.com/shiguresoradesu" target="_blank" rel="noreferrer noopener me">
+            <svg class="icon icon-twitter" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>twitter</title><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+          </a>
+        
+          <a href="https://t.me/shigure_tg" target="_blank" rel="noreferrer noopener me">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-link">
+  <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+  <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+          </a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">1.5Internet结构和ISP</h1>
+      <div class="post-meta">
+        <div>
+          <svg class="icon icon-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>calendar</title><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          Jul 11, 2025
+        </div>
+        <div>
+          <svg class="icon icon-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>clock</title><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          1 min read
+        </div>
+        <div>
+          <svg class="icon icon-tag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>tag</title><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+              <a class="tag" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      <h2 id="互联网结构网络的网络">互联网结构：网络的网络</h2>
+<p>端系统通过<strong>接入ISPs</strong> （Internet Service Providers）连接到互联网</p>
+<ul>
+<li>住宅，公司和大学的ISPs</li>
+</ul>
+<p>接入ISPs相应的必须是互联的</p>
+<ul>
+<li>因此任何两个端系统课相互发送分组到对方</li>
+</ul>
+<p>导致的“网络的网络”非常复杂</p>
+<ul>
+<li>发展和演化是通过<strong>经济的</strong>和<strong>国家的</strong>政策来驱动的</li>
+</ul>
+<p>让我们采用渐进方法来描述当前互联网的结构</p>
+<hr>
+<p><em>问题：</em> 给定数百万接入ISPs，如何将它们互联到一起</p>
+<p><img src="https://photobed.shigures.me/image-20250711134525009.png" alt="image-20250711134525009"></p>
+<p><img src="https://photobed.shigures.me/image-20250711134618446.png" alt="image-20250711134618446"></p>
+<hr>
+<p><em>选项：</em> 将每个接入ISP都连接到全局ISP（全局范围内覆盖）？</p>
+<p><strong>客户</strong> ISPs和 <strong>提供者</strong> ISPs有经济合约</p>
+<p><img src="https://photobed.shigures.me/image-20250711134757090.png" alt="image-20250711134757090"></p>
+<p>但是，如果全局ISP是可行的业务，那会有竞争者</p>
+<p>有利可图，一定会有竞争</p>
+<p><img src="https://photobed.shigures.me/image-20250711135437192.png" alt="image-20250711135437192"></p>
+<p><strong>竞争：</strong> 但如果全局ISP是有利可为的业务，那会有竞争者</p>
+<p><strong>合作：</strong> 通过ISP之间的合作可以完成业务的扩展，肯定会有互联，对等互联的结算关系</p>
+<p><img src="https://photobed.shigures.me/image-20250711140028912.png" alt="image-20250711140028912"></p>
+<p>……然后业务会细分（全球接入和区域接入），区域网络将出现，用与将接入ISPs连接到全局ISPs</p>
+<p><img src="https://photobed.shigures.me/image-20250711140619033.png" alt="image-20250711140619033"></p>
+<p>然后 <strong>内容提供商网络（Internet Content Providers , e.g.  , Google , Microsoft , Akamai）</strong> 可能会构建它们自己的网络，将它们的服务、内容更加靠近端用户，向用户提供更好的服务，减少自己的运营支出</p>
+<p><img src="https://photobed.shigures.me/image-20250711140935673.png" alt="image-20250711140935673"></p>
+<hr>
+<p><img src="https://photobed.shigures.me/image-20250711141008255.png" alt="image-20250711141008255"></p>
+<p>在网络的最中心，一些为数不多的充分连接的大范围网络（分布广、节点有限、但是之间有着多重连接）</p>
+<ul>
+<li><strong>&ldquo;tire-1&rdquo; commercial ISPs</strong> (e.g. , Level 3, Sprint , AT&amp;T , NTT)，国家或者国际范围的覆盖</li>
+<li><strong>content provider network</strong> (e.g. , Google): 将它们的数据中心接入ISP，方便周遍用户的访问；通常私有网络之间用转往绕过第一层ISP和区域ISPs</li>
+</ul>
+<hr>
+<p>松散的层次模型</p>
+<h3 id="中心第一层isp-如-uunet-bbngenuity-sprint-att-国家国际覆盖速率极高"><strong>中心：第一层ISP</strong> (如 UUNet, BBN/Genuity, Sprint, AT&amp;T) 国家/国际覆盖，速率极高</h3>
+<ul>
+<li>直接与其他第一层ISP相连</li>
+<li>与大量的第二层ISP和其他客户网络相连</li>
+</ul>
+<p><img src="https://photobed.shigures.me/image-20250711142429495.png" alt="image-20250711142429495"></p>
+<hr>
+<p>e.g. BBN/GTE US backbone network</p>
+<p><img src="https://photobed.shigures.me/image-20250711142539056.png" alt="image-20250711142539056"></p>
+<hr>
+<p>Tier-1 ISP: e.g., Sprint</p>
+<p><img src="https://photobed.shigures.me/image-20250711142656732.png" alt="image-20250711142656732"></p>
+<h3 id="第二层isp更小些的通产是区域性的isp">第二层ISP：更小些的（通产是区域性的）ISP</h3>
+<p>与一个或多个第一层ISPs，也可能与其他第二层ISP</p>
+<p><img src="https://photobed.shigures.me/image-20250711142852625.png" alt="image-20250711142852625"></p>
+<h3 id="第三层isp与其他本地isp">第三层ISP与其他本地ISP</h3>
+<p>接入网（与端系统最近）</p>
+<p><img src="https://photobed.shigures.me/image-20250711142958562.png" alt="image-20250711142958562"></p>
+<hr>
+<p><strong>一个分组要经过许多网络！</strong></p>
+<p><img src="https://photobed.shigures.me/image-20250711143040831.png" alt="image-20250711143040831"></p>
+<hr>
+<p>很多内容提供商（如：Google，Akamai）可能会部署自己的网络，连接自己的在各地的DC（数据中心），走自己的数据</p>
+<p>连接若干local ISP 和各级（包括一层）ISP，更加靠近用户</p>
+<p><img src="https://photobed.shigures.me/image-20250711143302961.png" alt="image-20250711143302961"></p>
+<h2 id="isp之间的连接">ISP之间的连接</h2>
+<p><img src="https://photobed.shigures.me/image-20250711143349299.png" alt="image-20250711143349299"></p>
+<p>POP：高层ISP面向客户网络的接入点，涉及费用结算</p>
+<ul>
+<li>如一个低层ISP接入多个高层ISP，多宿（multi home）</li>
+</ul>
+<p>对等接入：2个ISP对等互联，不涉及费用结算</p>
+<p>IXP：多个对等ISP互联互通指出，通常不涉及费用结算</p>
+<ul>
+<li>对等接入</li>
+</ul>
+<p>ICP自己部署专用网络，同时和各级ISP连接</p>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>
