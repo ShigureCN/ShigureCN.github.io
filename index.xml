@@ -6,8 +6,15 @@
     <description>Recent content on ShigureSora</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 11 Jul 2025 18:56:54 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 16 Jul 2025 16:54:39 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>1.6分组延时、丢失和吞吐量</title>
+      <link>http://localhost:1313/posts/1.6%E5%88%86%E7%BB%84%E5%BB%B6%E6%97%B6%E4%B8%A2%E5%A4%B1%E5%92%8C%E5%90%9E%E5%90%90%E9%87%8F/</link>
+      <pubDate>Wed, 16 Jul 2025 16:54:39 +0800</pubDate>
+      <guid>http://localhost:1313/posts/1.6%E5%88%86%E7%BB%84%E5%BB%B6%E6%97%B6%E4%B8%A2%E5%A4%B1%E5%92%8C%E5%90%9E%E5%90%90%E9%87%8F/</guid>
+      <description>&lt;h1 id=&#34;16-分组延时丢失和吞吐量&#34;&gt;1.6 分组延时、丢失和吞吐量&lt;/h1&gt;&#xA;&lt;h2 id=&#34;分组丢失和延时是怎样发生的&#34;&gt;分组丢失和延时是怎样发生的&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;分组到达链路的速率超过了链路输出的能力&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;分组等待排到对头、被传输&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://photobed.shigures.me/image-20250711174503611.png&#34; alt=&#34;image-20250711174503611&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;四种分组延时&#34;&gt;四种分组延时&lt;/h2&gt;&#xA;&lt;h3 id=&#34;1-节点处理延时&#34;&gt;1. 节点处理延时&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;检查bit级差错&lt;/li&gt;&#xA;&lt;li&gt;检查分组首部和决定将分组导向何处&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;2-排队延时&#34;&gt;2. 排队延时&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;在输出链路上等待传输的时间&lt;/li&gt;&#xA;&lt;li&gt;依赖于路由器的拥塞程度&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;3-传输延时&#34;&gt;3. 传输延时&lt;/h3&gt;&#xA;&lt;p&gt;R = 链路带宽（bps）&lt;/p&gt;&#xA;&lt;p&gt;L = 分组长度（bits）&lt;/p&gt;&#xA;&lt;p&gt;将分组发送到链路上的时间 = L / R&lt;/p&gt;&#xA;&lt;p&gt;存储转发延时&lt;/p&gt;&#xA;&lt;h3 id=&#34;4-传播延时&#34;&gt;4. 传播延时&lt;/h3&gt;&#xA;&lt;p&gt;d = 物理链路的长度&lt;/p&gt;&#xA;&lt;p&gt;s = 在媒体上的传播速度（~ 2x10^8 m/sec ）&lt;/p&gt;&#xA;&lt;p&gt;传播延时 = d/s&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://photobed.shigures.me/image-20250711175225823.png&#34; alt=&#34;image-20250711175225823&#34;&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h3 id=&#34;车队类比&#34;&gt;车队类比&lt;/h3&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://photobed.shigures.me/image-20250711175331681.png&#34; alt=&#34;image-20250711175331681&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;汽车以100 km/h 的速度传播&lt;/p&gt;&#xA;&lt;p&gt;收费站服务每辆车需要12s（传输时间）&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;汽车&lt;del&gt;bit；车队&lt;/del&gt;分组&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Q：在车队在第二个收费站排列好之前需要多长时间？&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;即：从车队的第一辆车到达第一个收费站开始及时，到这个车队的最后一辆车离开第二个收费站，共需要多少时间&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;将车队从收费站输送到公路上的时间 = 12*10 = 120s&lt;/p&gt;&#xA;&lt;p&gt;最后一辆车从第一个收费站到第二个收费站的传播时间：100km/(100km/h) = 1h&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;A ： 62 min&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://photobed.shigures.me/image-20250711175745881.png&#34; alt=&#34;image-20250711175745881&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;汽车以1000km/h 的速度传播汽车&lt;/p&gt;&#xA;&lt;p&gt;收费站服务每辆车需要1min&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Q : 在所有的汽车被第一个收费站服务之前，汽车会到达第二个收费站吗&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
     <item>
       <title>1.5Internet结构和ISP</title>
       <link>http://localhost:1313/posts/1.5internet%E7%BB%93%E6%9E%84%E5%92%8Cisp/</link>
